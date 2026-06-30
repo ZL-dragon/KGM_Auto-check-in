@@ -36,9 +36,9 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('./api/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - name: Install dependencies #安装依赖
-        run: npm ci
-      - name: Cache node modules # 缓存安装的依赖
+      - name: 安装依赖
+        run: npm install
+      - name: Cache node modules 
         uses: actions/cache@v4
         env:
           cache-name: cache-node-modules
